@@ -5,11 +5,14 @@
     'category':'clinic',
     'auther':'yacine',
     'depends': ['base'],
-    'data':[
+    'data':[ 
         'security/ir.model.access.csv',
-        'views/medicin.xml',
+        'views/patient.xml'
+
+
     ],
     'installable':True,
     'application':True,
     'auto_install':False,
+
 }

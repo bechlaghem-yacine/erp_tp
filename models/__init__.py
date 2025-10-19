@@ -1,1 +1,6 @@
+from . import prescription
+from . import appointment
+from . import doctor
 from . import patient
+from . import medicine
+from . import prescriptionline

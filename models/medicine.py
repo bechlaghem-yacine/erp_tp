@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 class Medicine(models.Model):
-    _name = "clinc.Medicine"
+    _name = "clinc.medicine"
     _description = "Medicines Management"
 
     commercial_name = fields.Char(string="Commercial Name", required=True)

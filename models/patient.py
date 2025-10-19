@@ -7,7 +7,7 @@ class Patient(models.Model):
     firstname=fields.Char(string="firstname",required=True)
     lastname=fields.Char(string="lastname",required=True)
     birthday=fields.Date(string="birth date",required=True)
-    Nationality=fields.Char(string="Nationality",required=True)
+    nationality=fields.Char(string="Nationality",required=True)
     sex=fields.Selection([
         ('male','Male'),
         ('female','Female')
