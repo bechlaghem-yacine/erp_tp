@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="medicin_form_view">
+            <field name="name">patient.search</field>
+            <field name="model">patient</field>
+            <field name="arch" type="xml">
+            <search string="patients">
+               <field name="nom"/>
+                <field name="prenom"/>
+                <field name="nationalite"/>
+                <field name="sex"/>
+
+                <filter string="Male" name="male" domain="[('sexe', '=', 'homme')]"/>
+                <filter string="Female" name="female" domain="[('sexe', '=', 'femme')]"/>
+                 <group expand="0" string="Group By">
+                    <filter string="Nationalité" name="nationalite" context="{'group_by': 'nationalite'}"/>
+                    <filter string="Sexe" name="sexe" context="{'group_by': 'sexe'}"/>
+                </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+<record model="ir.ui.view" id="medicin_form_view">
+    <field name="name">medicin.form.view</field>
+    <field name="model">medicin</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="nom" />
+                        <field name="prenom" />
+                    </group>
+                         <group>
+                            <field name="nationalite" />
+                            <field name="sex" />
+                        </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
