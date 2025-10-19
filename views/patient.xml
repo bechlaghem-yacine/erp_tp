@@ -4,7 +4,7 @@
         <field name="name">patient.tree</field>
         <field name="model">clinc.patient</field>
         <field name="arch" type="xml">
-            <tree string="Patients">
+            <tree string="patients">
                 <field name="firstname"/>
                 <field name="lastname"/>
                 <field name="birthday"/>
@@ -19,7 +19,7 @@
         <field name="name">patient.form</field>
         <field name="model">clinc.patient</field>
         <field name="arch" type="xml">
-            <form string="Patient">
+            <form string="patient">
                 <sheet>
                     <group>
                         <field name="firstname"/>
@@ -35,12 +35,12 @@
 
     <!-- Action (what to open when clicking the menu) -->
     <record id="action_patient" model="ir.actions.act_window">
-        <field name="name">Patients</field>
+        <field name="name">patients</field>
         <field name="res_model">clinc.patient</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Menu items -->
     <menuitem id="menu_medical_root" name="Medical Management"/>
-    <menuitem id="menu_patient" name="Patients" parent="menu_medical_root" action="action_patient"/>
+    <menuitem id="menu_patient" name="patients" parent="menu_medical_root" action="action_patient"/>
 </odoo>

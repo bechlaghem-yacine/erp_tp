@@ -10,8 +10,8 @@
         'views/patient.xml',
         'views/doctor.xml',
         'views/prescription.xml',
-        # 'views/appointment.xml',
-        # 'views/medicine.xml',
+        'views/appointment.xml',
+        'views/medicine.xml',
 
 
 
