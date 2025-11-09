@@ -36,7 +36,18 @@
         </field>
     </record>
 
-    <!-- Action (what to open when clicking the menu) -->
+<record id="view_doctor_search" model="ir.ui.view">
+        <field name="name">doctor.search</field>
+        <field name="model">clinc.doctor</field>
+        <field name="arch" type="xml">
+            <search string="Search Doctors">
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="specialite" string="Speciality"/>
+            </search>
+        </field>
+    </record>
+
     <record id="action_doctor" model="ir.actions.act_window">
         <field name="name">doctors</field>
         <field name="res_model">clinc.doctor</field>

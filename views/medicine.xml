@@ -29,7 +29,20 @@
         </field>
     </record>
 
-    <!-- Action (what to open when clicking the menu) -->
+    <record id="view_medicine_search" model="ir.ui.view">
+        <field name="name">medicine.search</field>
+        <field name="model">clinc.medicine</field>
+        <field name="arch" type="xml">
+            <search string="Search Medicines">
+                <field name="commercial_name"/>
+                <field name="dci"/>
+                <field name="form"/>
+
+                <filter string="Form: Tablet" name="filter_tablet" domain="[('form', '=', 'tablet')]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="action_medicine" model="ir.actions.act_window">
         <field name="name">medicines</field>
         <field name="res_model">clinc.medicine</field>

@@ -28,19 +28,44 @@
                         <field name="nationality"/>
                         <field name="sex"/>
                     </group>
+                      <notebook>
+                        <page string="Prescriptions">
+                            <field name="prescription_ids">
+                                <tree editable="top">
+                                    <field name="date"/>
+                                    <field name="doctor_id"/>
+                                    <!-- You can also include medicines as One2many if needed -->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- Action (what to open when clicking the menu) -->
+    <record id="view_patient_search" model="ir.ui.view">
+        <field name="name">patient.search</field>
+        <field name="model">clinc.patient</field>
+        <field name="arch" type="xml">
+            <search string="Search Patients">
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="sex"/>
+                <group expand="0" string="Group By">
+                    <filter string="Gender" name="group_by_sex" context="{'group_by': 'sex'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="action_patient" model="ir.actions.act_window">
         <field name="name">patients</field>
         <field name="res_model">clinc.patient</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Menu items -->
+
     <menuitem id="menu_medical_root" name="Medical Management"/>
     <menuitem id="menu_patient" name="patients" parent="menu_medical_root" action="action_patient"/>
 </odoo>

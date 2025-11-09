@@ -33,14 +33,24 @@
         </field>
     </record>
 
-    <!-- Action (what to open when clicking the menu) -->
+        <record id="view_appointment_search" model="ir.ui.view">
+        <field name="name">appointment.search</field>
+        <field name="model">clinc.appointment</field>
+        <field name="arch" type="xml">
+            <search string="Search Appointments">
+                <field name="doctor_id" string="Doctor"/>
+                <field name="patient_id" string="Patient"/>
+                
+            </search>
+        </field>
+    </record>
+
     <record id="action_appointment" model="ir.actions.act_window">
         <field name="name">appointments</field>
         <field name="res_model">clinc.appointment</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Menu items -->
     <menuitem id="menu_medical_root" name="Medical Management"/>
     <menuitem id="menu_appointment" name="appointments" parent="menu_medical_root" action="action_appointment"/>
 </odoo>
