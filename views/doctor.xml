@@ -24,14 +24,40 @@
             <form string="doctor">
                 <sheet>
                     <group>
+                      <group>
                         <field name="firstname"/>
                         <field name="lastname"/>
                         <field name="specialite"/>
+                    </group>
+                    <group>
                         <field name="nationality"/>
                         <field name="birthday"/>
                         <field name="phone_number"/>
                     </group>
+                    </group>
+                <notebook>
+                <page string="Appointments">
+                    <field name="appointment_ids">
+                        <tree editable="top">
+                            <field name="appointment_date"/>
+                            <field name="patient_id"/>
+                            <field name="reason"/>
+                            <field name="status"/>
+                        </tree>
+                    </field>
+                </page>
+
+                <page string="Prescriptions">
+                    <field name="prescription_ids">
+                        <tree editable="top">
+                            <field name="date"/>
+                            <field name="patient_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
                 </sheet>
+               
             </form>
         </field>
     </record>

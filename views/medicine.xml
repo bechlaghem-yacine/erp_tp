@@ -24,6 +24,18 @@
                         <field name="dci"/>
                         <field name="form"/>
                     </group>
+                    <notebook>
+                    <page string="prescription Lines">
+                    <field name="prescription_line_ids">
+                        <tree editable="top">
+                            <field name="intake_date"/>
+                            <field name="dosage"/>
+                            <field name="prescription_id"/>
+                        </tree>
+                    </field>
+                    
+                    </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

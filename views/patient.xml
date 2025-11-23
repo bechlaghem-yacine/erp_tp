@@ -38,6 +38,17 @@
                                 </tree>
                             </field>
                         </page>
+                        <page string="Appointments">
+                            <field name="appointment_ids">
+                                <tree editable="top">
+                                    <field name="appointment_date"/>
+                                    <field name="doctor_id"/>
+                                    <field name="reason"/>
+                                    <field name="status"/>
+                                    <!-- You can also include medicines as One2many if needed -->
+                                </tree>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
