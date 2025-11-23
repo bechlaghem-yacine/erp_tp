@@ -8,6 +8,8 @@
                         <field name="commercial_name"/>
                         <field name="dci"/>
                         <field name="form"/>
+                        <field name="default_dosage"/>
+
             </tree>
         </field>
     </record>
@@ -23,6 +25,7 @@
                         <field name="commercial_name"/>
                         <field name="dci"/>
                         <field name="form"/>
+                        <field name="default_dosage"/>
                     </group>
                     <notebook>
                     <page string="prescription Lines">
@@ -30,6 +33,7 @@
                         <tree editable="top">
                             <field name="intake_date"/>
                             <field name="dosage"/>
+                            <field name="instructions"/>
                             <field name="prescription_id"/>
                         </tree>
                     </field>

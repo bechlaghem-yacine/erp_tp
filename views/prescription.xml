@@ -29,6 +29,7 @@
                             <tree editable="top">
                                 <field name="intake_date"/>
                                 <field name="dosage"/>
+                                <field name="instructions"/>
                                 <field name="medication_id"/>
                             </tree>
                         </field>

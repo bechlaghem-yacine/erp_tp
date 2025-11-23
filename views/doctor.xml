@@ -4,7 +4,7 @@
         <field name="name">doctor.tree</field>
         <field name="model">clinc.doctor</field>
         <field name="arch" type="xml">
-            <tree string="Patients">
+            <tree string="doctors">
                 <field name="firstname"/>
                 <field name="lastname"/>
                 <field name="birthday"/>

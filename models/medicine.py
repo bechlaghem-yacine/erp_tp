@@ -17,3 +17,5 @@ class Medicine(models.Model):
     ], string="Form", required=True)
     prescription_line_ids = fields.One2many('clinc.prescriptionline', 'medication_id', string="prescription lines")
 
+    default_dosage = fields.Char(string="Dosage par défaut", 
+                                 help="Ex: 500 mg, 1 comprimé")
