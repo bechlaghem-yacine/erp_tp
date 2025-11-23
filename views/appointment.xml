@@ -1,6 +1,6 @@
 <odoo>
     <!-- Tree view (list of patients) -->
-    <record id="view_patient_tree" model="ir.ui.view">
+    <record id="view_appointment_tree" model="ir.ui.view">
         <field name="name">appointment.tree</field>
         <field name="model">clinc.appointment</field>
         <field name="arch" type="xml">
