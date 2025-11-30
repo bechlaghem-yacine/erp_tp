@@ -11,6 +11,21 @@ class Appointment(models.Model):
     ('confirmed', 'Confirmed'),
     ('cancelled', 'Cancelled'),
     ('completed', 'Completed')
-    ], string="Status", default='planned', required=True)
+    ], string="Status", default='planned',  compute='_compute_appointment_date',
+        store=True   )
     doctor_id = fields.Many2one('clinc.doctor', string="Doctor", required=True)
     patient_id = fields.Many2one('clinc.patient', string="Patient", required=True)
+
+    @api.depends('appointment_date')
+
+    def _compute_appointment_date   (self):
+        current_date = fields.Datetime.now().date()
+
+        for appointment in self:
+            if appointment.appointment_date:
+                appointment_date = appointment.appointment_date.date()
+                if appointment_date == current_date:
+                    appointment.status = 'completed'
+                elif appointment_date < current_date:
+                    appointment.status = 'planned'
+      

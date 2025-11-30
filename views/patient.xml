@@ -48,6 +48,14 @@
                                 </tree>
                             </field>
                         </page>
+                        <!-- <page string="weight_history">
+                            <field name="weight_history_ids">
+                                <tree editable="top">
+                                    <field name="weight"/>
+                                    <field name="date"/>
+                                </tree>
+                            </field>
+                        </page> -->
                     </notebook>
                 </sheet>
             </form>
@@ -59,9 +67,9 @@
         <field name="model">clinc.patient</field>
         <field name="arch" type="xml">
             <search string="Search Patients">
-                <field name="firstname"/>
+                <!-- <field name="firstname"/>
                 <field name="lastname"/>
-                <field name="sex"/>
+                <field name="sex"/> -->
                 <group expand="0" string="Group By">
                     <filter string="Gender" name="group_by_sex" context="{'group_by': 'sex'}"/>
                 </group>

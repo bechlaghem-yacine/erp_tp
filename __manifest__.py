@@ -4,7 +4,7 @@
     'version':'1.0',
     'category':'clinic',
     'auther':'yacine',
-    'depends': ['base'],
+    'depends': ['base','hr'],
     'data':[ 
         'security/ir.model.access.csv',
         'views/patient.xml',
@@ -12,9 +12,6 @@
         'views/prescription.xml',
         'views/appointment.xml',
         'views/medicine.xml',
-
-
-
     ],
     'installable':True,
     'application':True,

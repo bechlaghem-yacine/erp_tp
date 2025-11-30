@@ -67,8 +67,8 @@
         <field name="model">clinc.doctor</field>
         <field name="arch" type="xml">
             <search string="Search Doctors">
-                <field name="firstname"/>
-                <field name="lastname"/>
+                <!-- <field name="firstname"/>
+                <field name="lastname"/> -->
                 <field name="specialite" string="Speciality"/>
             </search>
         </field>
