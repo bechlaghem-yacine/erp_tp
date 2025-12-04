@@ -20,11 +20,6 @@ class Patient(models.Model):
 
     appointment_ids = fields.One2many('clinc.appointment', 'patient_id', string="appointments")
     prescription_ids = fields.One2many('clinc.prescription', 'patient_id', string="Prescriptions")
-    # weight_history_ids = fields.One2many(
-    #     'clinc.patient.weight',
-    #     'patient_id',
-    #     string="Historique des poids"
-    # )
 
     nbr_prescription = fields.Integer(
         string="Nombre de prescriptions",
@@ -38,17 +33,30 @@ class Patient(models.Model):
             patient.nbr_prescription = len(patient.prescription_ids)
 
 
+    weight_ids = fields.One2many(
+        'clinc.patient.weight',
+        'patient_id',
+        string="Weight Records"
+    )
 
-# class PatientWeight(models.Model):
-#     _name = "clinc.patient.weight"
-#     _description = "Patient Weight History"
+    height_cm = fields.Float(string="Height (cm)")
 
-#     patient_id = fields.Many2one(
-#         'clinc.patient',
-#         string="Patient",
-#         required=True,
-#         ondelete="cascade"
-#     )
+    bmi = fields.Float(
+        string="BMI",
+        compute="_compute_bmi",
+        store=True
+    )
 
-#     weight = fields.Float(string="Poids (kg)", required=True)
-#     date = fields.Date(string="Date", default=fields.Date.today)
+    @api.depends('height_cm', 'weight_ids.weight')
+    def _compute_bmi(self):
+        for rec in self:
+            if rec.height_cm and rec.weight_ids:
+                latest_weight = rec.weight_ids[-1].weight  # last weight
+                height_m = rec.height_cm / 100
+                if height_m > 0:
+                    rec.bmi = latest_weight / (height_m ** 2)
+                else:
+                    rec.bmi = 0
+            else:
+                rec.bmi = 0
+

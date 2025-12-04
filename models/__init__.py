@@ -4,3 +4,4 @@ from . import doctor
 from . import patient
 from . import medicine
 from . import prescriptionline
+from . import patientWeight

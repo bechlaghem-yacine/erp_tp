@@ -1,6 +1,6 @@
 {
 
-    'name':'clinic managment test',
+    'name':'clinic managment',
     'version':'1.0',
     'category':'clinic',
     'auther':'yacine',

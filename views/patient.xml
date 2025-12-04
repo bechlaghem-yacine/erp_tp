@@ -9,7 +9,10 @@
                 <field name="birthday"/>
                 <field name="nationality"/>
                 <field name="sex"/>
-                <field name="nbr_prescription"/>          
+                <field name="nbr_prescription"/>     
+                <field name="height_cm"/>
+                <field name="bmi" readonly="1"/>
+     
             </tree>
         </field>
     </record>
@@ -26,6 +29,9 @@
                         <field name="birthday"/>
                         <field name="nationality"/>
                         <field name="sex"/>
+                        <field name="height_cm"/>
+                        <field name="bmi" readonly="1"/>
+
                     </group>
                       <notebook>
                         <page string="Prescriptions">
@@ -48,14 +54,16 @@
                                 </tree>
                             </field>
                         </page>
-                        <!-- <page string="weight_history">
-                            <field name="weight_history_ids">
-                                <tree editable="top">
-                                    <field name="weight"/>
-                                    <field name="date"/>
-                                </tree>
-                            </field>
-                        </page> -->
+                        <page string="Weight History">
+                           <field name="weight_ids">
+                             <tree editable="top">
+                              <field name="date"/>
+                          <field name="weight"/>
+                                  </tree>
+                          </field>
+                        </page>
+
+
                     </notebook>
                 </sheet>
             </form>
