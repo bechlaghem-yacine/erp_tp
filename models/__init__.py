@@ -5,3 +5,5 @@ from . import patient
 from . import medicine
 from . import prescriptionline
 from . import patientWeight
+from . import hrEmployee
+from . import medicalfile

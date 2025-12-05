@@ -13,7 +13,8 @@ class Patient(models.Model):
         ('male','Male'),
         ('female','Female')
         ],string="sex",required=True)
-    
+    image = fields.Binary(string="Photo")
+
 
 
 

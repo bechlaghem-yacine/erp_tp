@@ -1,20 +1,20 @@
 <odoo>
-    <record id="view_hr_employee_form_inherit_clinic" model="ir.ui.view">
-        <field name="name">hr.employee.form.inherit.clinic</field>
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
-
-            <!-- Add your fields AFTER the employee name -->
-            <xpath expr="//field[@name='work_phone']" position="after">
-                <group string="Infos Clinique">
-                    <field name="date_debut"/>
-                    <field name="nombre_annee"/>
-                    <field name="num_retraite"/>
-                    <field name="date_retraite"/>
-                </group>
+            <!-- Add inside active_group -->
+            <xpath expr="//group[@name='active_group']" position="inside">
+                <field name="date_debut"/>
+                <field name="nombre_annee"/>
             </xpath>
 
+            <!-- Replace visa_expire -->
+            <xpath expr="//field[@name='visa_expire']" position="replace">
+                <field name="num_retraite"/>
+                <field name="date_retraite"/>
+            </xpath>
         </field>
     </record>
 </odoo>

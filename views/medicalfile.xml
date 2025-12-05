@@ -1,0 +1,56 @@
+<odoo>
+    <record id="view_medicalfile_form" model="ir.ui.view">
+        <field name="name">medicalfile.form</field>
+        <field name="model">clinc.medicalfile</field>
+        <field name="arch" type="xml">
+            <form string="medicalfile">
+                <sheet>
+                    <group>
+                        <field name="numero_dossier"/>
+                        <field name="date"/>
+                        <field name="doctor_id"/>
+                        <field name="patient_id"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Medicaments">
+                            <field name="medicines_ids">
+                                <tree editable="top">
+                                    <field name="medication_id"/>
+                                    <field name="dosage"/>
+                                    <field name="intake_date"/>
+                                    <field name="instructions"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Observation">
+                            <field name="observation"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_medicalfile_tree" model="ir.ui.view">
+        <field name="name">medicalfile.tree</field>
+        <field name="model">clinc.medicalfile</field>
+        <field name="arch" type="xml">
+            <tree string="Medicalfile">
+                <field name="numero_dossier"/>
+                <field name="date"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_medicalfile" model="ir.actions.act_window">
+        <field name="name">Medical files</field>
+        <field name="res_model">clinc.medicalfile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_medical_root" name="Medical Management"/>
+    <menuitem id="menu_medicalfile" name="Dossiers" parent="menu_medical_root" action="action_medicalfile"/>
+    
+</odoo>

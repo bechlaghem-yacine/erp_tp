@@ -8,7 +8,10 @@ class PrescriptionLine(models.Model):
     dosage  = fields.Char(string="Dosage ", required=True)
     instructions = fields.Text(string="Instructions", required=True)
     medication_id = fields.Many2one('clinc.medicine', string="Medication", required=True)
-    prescription_id = fields.Many2one('clinc.prescription', string="Prescription", required=True)
+    prescription_id = fields.Many2one('clinc.prescription', string="Prescription", )
+
+    medicalfile_id = fields.Many2one('clinc.medicalfile', string="Dossier")
+
     
     
     @api.onchange('medication_id')

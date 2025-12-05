@@ -1,7 +1,6 @@
 from odoo import models, fields
 
 class HrEmployee(models.Model):
-    _name = "clinc.hrEmployee"
     _inherit = 'hr.employee'
 
     date_debut = fields.Date(string="Date de début")

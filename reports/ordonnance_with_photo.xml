@@ -1,0 +1,18 @@
+<odoo>
+    <template id="report_ordonnance_with_photo" inherit_id="clinic_managment.report_ordonnance">
+        <!-- On cible le <p> contenant le nom du patient -->
+        <xpath expr="//p[.//t[@t-esc='doc.patient_id.firstname']]" position="before">
+            <div>
+                <img t-if="doc.patient_id.image" t-attf-src="data:image/*;base64,{{ doc.patient_id.image }}" style="width:50px; height:50px;"/>
+            </div>
+        </xpath>
+    </template>
+
+    <report
+        id="report_ordonnance_with_photo_action"
+        model="clinc.medicalfile"
+        string="Ordonnance avec photo"
+        report_type="qweb-pdf"
+        name="clinic_managment.report_ordonnance_with_photo"
+    />
+</odoo>

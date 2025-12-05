@@ -1,0 +1,38 @@
+<odoo>
+    <template id="report_ordonnance">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <h2>Ordonnance</h2>
+                    <p><strong>Numéro dossier:</strong> <t t-esc="doc.numero_dossier"/></p>
+                    <p><strong>Date:</strong> <t t-esc="doc.date"/></p>
+                    <p><strong>Patient:</strong> <t t-esc="doc.patient_id.firstname"/></p>
+                    <p><strong>Médecin:</strong> <t t-esc="doc.doctor_id.firstname"/></p>
+
+                    <h3>Médicaments</h3>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Médicament</th>
+                                <th>Dosage</th>
+                                <th>Date prise</th>
+                                <th>Instructions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr t-foreach="doc.medicines_ids" t-as="line">
+                                <td><t t-esc="line.medication_id.commercial_name"/></td>
+                                <td><t t-esc="line.dosage"/></td>
+                                <td><t t-esc="line.intake_date"/></td>
+                                <td><t t-esc="line.instructions"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Observations</h3>
+                    <p><t t-esc="doc.observation"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

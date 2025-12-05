@@ -6,6 +6,7 @@ access_clinc_medicament,access.clinc.medicine,model_clinc_medicine,,1,1,1,1
 access_clinc_ligne_medicament,access.clinc.prescriptionline,model_clinc_prescriptionline,,1,1,1,1
 access_clinc_rendez_vous,access.clinc.appointment,model_clinc_appointment,,1,1,1,1
 access_clinc_weight,access.clinc.patient.weight,model_clinc_patient_weight,,1,1,1,1
+access_clinc_medicalfile,access.clinc.medicalfile,model_clinc_medicalfile,,1,1,1,1
 
 
 
