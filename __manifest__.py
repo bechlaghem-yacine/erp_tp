@@ -7,9 +7,10 @@
     'depends': ['base','hr'],
     'data':[ 
         'security/ir.model.access.csv',
-        'views/prescription_wizard.xml',
+        'wizard/prescription_wizard.xml',
         'views/patient.xml',
         'views/doctor.xml',
+        'wizard/add_medicine_wizard_view.xml',
         'views/prescription.xml',
         'views/appointment.xml',
         'views/medicine.xml',

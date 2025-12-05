@@ -16,6 +16,10 @@
     <field name="model">clinc.prescription</field>
     <field name="arch" type="xml">
         <form string="Prescription">
+        <button name="%(clinic_managment.action_add_medicine_wizard)d"
+        string="Ajouter un médicament"
+        type="action"
+        class="oe_highlight"/>
             <sheet>
                 <group>
                     <field name="date" readonly="1"/>
