@@ -4,7 +4,8 @@ class Appointment(models.Model):
     _name = "clinc.appointment"
     _description = "Appointments"
 
-    appointment_date = fields.Datetime(string="Appointment Date", required=True)
+    appointment_date = fields.Datetime(string="Appointment Date", required=True,  default=fields.Datetime.now,
+    readonly=True,)
     reason = fields.Text(string="Reason for Appointment", required=False)
     status = fields.Selection([
     ('planned', 'Planned'),
@@ -23,9 +24,9 @@ class Appointment(models.Model):
 
         for appointment in self:
             if appointment.appointment_date:
-                appointment_date = appointment.appointment_date.date()
-                if appointment_date == current_date:
+                skibidi = appointment.appointment_date.date()
+                if skibidi == current_date:
                     appointment.status = 'completed'
-                elif appointment_date < current_date:
+                elif skibidi < current_date:
                     appointment.status = 'planned'
       

@@ -22,6 +22,11 @@
         <field name="model">clinc.patient</field>
         <field name="arch" type="xml">
             <form string="patient">
+<button name="%(clinic_managment.action_create_prescription_wizard)d"
+        string="Créer une prescription"
+        type="action"
+        class="oe_highlight"
+        context="{'default_patient_id': active_id}"/>
                 <sheet>
                     <group>
                         <field name="firstname"/>

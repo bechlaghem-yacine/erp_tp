@@ -18,7 +18,7 @@
         <form string="Prescription">
             <sheet>
                 <group>
-                    <field name="date"/>
+                    <field name="date" readonly="1"/>
                     <field name="doctor_id"/>
                     <field name="patient_id"/>
                 </group>

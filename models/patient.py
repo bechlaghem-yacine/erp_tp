@@ -2,8 +2,8 @@
 from odoo import models, fields , api
 class Patient(models.Model):
     _name = 'clinc.patient'
-    # _description = "Patient Management"
-    # _rec_name='firstname'
+    _description = "Patient Management"
+    _rec_name='firstname'
 
     firstname=fields.Char(string="firstname",required=True)
     lastname=fields.Char(string="lastname",required=True)
