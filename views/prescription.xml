@@ -25,7 +25,9 @@
         <button name="%(clinic_managment.action_reset_medicines_wizard)d"
         string="Réinitialiser Médicaments"
         type="action"
-        class="oe_highlight"/>
+        class="oe_highlight"
+        groups="clinic_managment.group_doctor"
+        />
 
             <sheet>
                 <group>

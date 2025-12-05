@@ -7,3 +7,11 @@ access_clinc_ligne_medicament,access.clinc.prescriptionline,model_clinc_prescrip
 access_clinc_rendez_vous,access.clinc.appointment,model_clinc_appointment,,1,1,1,1
 access_clinc_weight,access.clinc.patient.weight,model_clinc_patient_weight,,1,1,1,1
 
+
+
+
+
+access_prescription_doctor,access.prescription.doctor,model_clinc_prescription,clinic_managment.group_doctor,1,1,1,1
+access_prescription_secretary,access.prescription.secretary,model_clinc_prescription,clinic_managment.group_secretary,1,0,0,0
+access_prescription_admin,access.prescription.admin,model_clinc_prescription,clinic_managment.group_medical_admin,1,1,1,1
+

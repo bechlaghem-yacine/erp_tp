@@ -1,0 +1,20 @@
+<odoo>
+    <!-- Médecin -->
+    <record id="group_doctor" model="res.groups">
+        <field name="name">Médecin</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Secrétaire -->
+    <record id="group_secretary" model="res.groups">
+        <field name="name">Secrétaire</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Administrateur médical -->
+    <record id="group_medical_admin" model="res.groups">
+        <field name="name">Administrateur médical</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+</odoo>
+

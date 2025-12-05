@@ -6,6 +6,7 @@
     'auther':'yacine',
     'depends': ['base','hr'],
     'data':[ 
+        'security/clinic_security.xml',
         'security/ir.model.access.csv',
         'wizard/prescription_wizard.xml',
         'views/patient.xml',
