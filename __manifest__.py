@@ -11,6 +11,7 @@
         'views/patient.xml',
         'views/doctor.xml',
         'wizard/add_medicine_wizard_view.xml',
+        'wizard/reset_medicines_wizard_view.xml',
         'views/prescription.xml',
         'views/appointment.xml',
         'views/medicine.xml',

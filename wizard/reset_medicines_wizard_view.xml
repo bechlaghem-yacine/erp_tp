@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_reset_medicines_wizard_form" model="ir.ui.view">
+        <field name="name">reset.medicines.wizard.form</field>
+        <field name="model">clinc.reset.medicines.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Réinitialiser Médicaments">
+                <group>
+                    <field name="prescription_id" readonly="1"/>
+                </group>
+                <footer>
+                    <button string="Réinitialiser" type="object" name="reset_medicines" class="btn-primary"/>
+                    <button string="Annuler" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Wizard action -->
+    <record id="action_reset_medicines_wizard" model="ir.actions.act_window">
+        <field name="name">Réinitialiser Médicaments</field>
+        <field name="res_model">clinc.reset.medicines.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_prescription_id': active_id}</field>
+    </record>
+</odoo>
