@@ -7,26 +7,31 @@ class CreatePrescriptionWizard(models.TransientModel):
     patient_id = fields.Many2one("clinc.patient", string="Patient", readonly=True)
     doctor_id = fields.Many2one("clinc.doctor", string="Médecin", required=True)
 
-    medicine_line_ids = fields.One2many(
+    line_ids  = fields.One2many(
         "clinc.create.prescription.line.wizard",
         "wizard_id",
-        string="Médicaments"
+        string="Lignes"
     )
 
     def create_prescription(self):
-        """Create prescription + prescription lines"""
         prescription = self.env['clinc.prescription'].create({
             'patient_id': self.patient_id.id,
             'doctor_id': self.doctor_id.id,
             'date': fields.Date.context_today(self),
         })
 
-        for line in self.medicine_line_ids:
-            self.env['clinc.prescriptionline'].create({
-                'prescription_id': prescription.id,
-                'medicine': line.medicine,
-                'posologie': line.posologie,
-                'date_prise': line.date_prise
+        created_ids = []
+        for line in self.line_ids:
+            rec = self.env["clinc.prescription.line"].create({
+                "prescription_id": prescription.id,
+                "medication_id": line.medication_id.id,
+                "dosage": line.posologie,
+                "intake_date": line.date_prise
             })
+            created_ids.append(rec.id)
 
+        # 3) Write One2many with command 6
+        prescription.write({
+            "ligne_ids": [(6, 0, created_ids)]
+        })
         return {'type': 'ir.actions.act_window_close'}

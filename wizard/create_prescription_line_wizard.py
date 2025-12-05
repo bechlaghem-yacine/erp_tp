@@ -5,7 +5,11 @@ class CreatePrescriptionLineWizard(models.TransientModel):
     _description = "Wizard Medicine Line"
 
     wizard_id = fields.Many2one("clinc.create.prescription.wizard")
-    medicine = fields.Char(string="Médicament", required=True)
+    medication_id = fields.Many2one(
+        'clinc.medicine',
+        string="Medication",
+        required=True
+    )
     posologie = fields.Char(string="Posologie", required=True)
     date_prise = fields.Date(
         string="Date de prise",
