@@ -14,7 +14,7 @@
 
                     <notebook>
                         <page string="Medicaments">
-                            <field name="medicines_ids">
+                            <field name="prescriptionline_ids">
                                 <tree editable="top">
                                     <field name="medication_id"/>
                                     <field name="dosage"/>
@@ -51,6 +51,6 @@
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="menu_medical_root" name="Medical Management"/>
-    <menuitem id="menu_medicalfile" name="Dossiers" parent="menu_medical_root" action="action_medicalfile"/>
+    <menuitem id="menu_medicalfile" name="Medical files" parent="menu_medical_root" action="action_medicalfile"/>
     
 </odoo>

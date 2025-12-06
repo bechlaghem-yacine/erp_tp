@@ -20,7 +20,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                                <tr t-foreach="doc.medicines_ids" t-as="line">
+                                <tr t-foreach="doc.prescriptionline_ids" t-as="line">
                                 <td><t t-esc="line.medication_id.commercial_name"/></td>
                                 <td><t t-esc="line.dosage"/></td>
                                 <td><t t-esc="line.intake_date"/></td>

@@ -7,8 +7,9 @@
                 <group>
                     <field name="prescription_id" invisible="1"/>
                     <field name="medication_id"/>
-                    <field name="posologie"/>
-                    <field name="date_prise"/>
+                    <field name="dosage"/>
+                    <field name="intake_date"/>
+                    <field name="instructions"/>
                 </group>
 
                 <footer>

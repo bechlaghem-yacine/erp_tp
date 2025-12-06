@@ -10,8 +10,9 @@ class CreatePrescriptionLineWizard(models.TransientModel):
         string="Medication",
         required=True
     )
-    posologie = fields.Char(string="Posologie", required=True)
-    date_prise = fields.Date(
+    dosage = fields.Char(string="dosage", required=True)
+    instructions = fields.Text(string="Instructions", required=True)
+    intake_date = fields.Date(
         string="Date de prise",
         default=fields.Date.context_today
     )

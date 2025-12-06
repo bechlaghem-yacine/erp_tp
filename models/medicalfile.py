@@ -11,6 +11,6 @@ class Medicalfile(models.Model):
     date = fields.Date(string="Date", default=fields.Date.today)
     doctor_id = fields.Many2one('clinc.doctor', string="Médecin")
     patient_id = fields.Many2one('clinc.patient', string="Patient")
-    medicines_ids = fields.One2many(
+    prescriptionline_ids = fields.One2many(
         'clinc.prescriptionline', 'medicalfile_id', string="Medicaments"
     )

@@ -11,7 +11,7 @@ class ResetMedicinesWizard(models.TransientModel):
         """Delete all medicine lines linked to the prescription."""
         self.ensure_one()
 
-        if not self.prescription_id.medicines_ids:
+        if not self.prescription_id.prescriptionline_ids:
             raise UserError("Cette prescription n'a aucun médicament à supprimer.")
 
         # Confirm deletion
@@ -24,6 +24,6 @@ class ResetMedicinesWizard(models.TransientModel):
             }
 
         # Delete all lines
-        self.prescription_id.medicines_ids.unlink()
+        self.prescription_id.prescriptionline_ids.unlink()
 
         return {'type': 'ir.actions.act_window_close'}

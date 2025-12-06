@@ -16,20 +16,24 @@ class AddMedicineWizard(models.TransientModel):
         required=True
     )
 
-    posologie = fields.Char(string="Posologie", required=True)
-    date_prise = fields.Date(string="Date de prise", required=True)
+    dosage = fields.Char(string="dosage", required=True)
+    intake_date = fields.Date(string="Date de prise", required=True)
+    instructions = fields.Text(string="Instructions", required=True)
+
 
     def add_medicine(self):
         """Add a new prescription line to the existing prescription using append()."""
         self.ensure_one()
 
         # Create the line using append()
-        self.prescription_id.medicines_ids = [
+        self.prescription_id.prescriptionline_ids = [
             (0, 0, {
-                'medication_id': self.medication_id.id,
-                'dosage': self.posologie,
-                'intake_date': self.date_prise,
-                'prescription_id': self.prescription_id.id,
+                'medication_id': self.medication_id,
+                'dosage': self.dosage,
+                'intake_date': self.intake_date,
+                'prescription_id': self.prescription_id,
+                'instructions': self.instructions,
+
             })
         ]
 
