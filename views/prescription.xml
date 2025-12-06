@@ -38,7 +38,7 @@
 
                 <notebook>
                     <page string="Medicines">
-                        <field name="medicines_ids">
+                        <field name="prescriptionline_ids">
                             <tree editable="top">
                                 <field name="intake_date"/>
                                 <field name="dosage"/>

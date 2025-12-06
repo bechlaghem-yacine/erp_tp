@@ -6,7 +6,7 @@ class Patient(models.Model):
     _rec_name='firstname'
 
     firstname=fields.Char(string="firstname",required=True)
-    lastname=fields.Char(string="lastname",required=True)
+    lastname=fields.Char(string="lastname")
     birthday=fields.Date(string="birth date",required=True)
     nationality=fields.Char(string="Nationality",required=True)
     sex=fields.Selection([
