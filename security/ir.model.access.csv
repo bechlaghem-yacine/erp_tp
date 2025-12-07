@@ -13,6 +13,18 @@ access_clinc_medicalfile,access.clinc.medicalfile,model_clinc_medicalfile,,1,1,1
 
 
 access_prescription_doctor,access.prescription.doctor,model_clinc_prescription,clinic_managment.group_doctor,1,1,1,1
+access_prescription_doctor,access.prescription.doctor,model_clinc_medicine,clinic_managment.group_doctor,1,1,1,1
 access_prescription_secretary,access.prescription.secretary,model_clinc_prescription,clinic_managment.group_secretary,1,0,0,0
-access_prescription_admin,access.prescription.admin,model_clinc_prescription,clinic_managment.group_medical_admin,1,1,1,1
+access_prescription_secretary,access.prescription.secretary,model_clinc_appointment,clinic_managment.group_secretary,1,1,1,0
+
+
+access_clinc_medicin,access.clinc.doctor,model_clinc_doctor,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_patient,access.clinc.patient,model_clinc_patient,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_prescription,access.clinc.prescription,model_clinc_prescription,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_medicament,access.clinc.medicine,model_clinc_medicine,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_ligne_medicament,access.clinc.prescriptionline,model_clinc_prescriptionline,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_rendez_vous,access.clinc.appointment,model_clinc_appointment,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_weight,access.clinc.patient.weight,model_clinc_patient_weight,clinic_managment.group_medical_admin,1,1,1,1
+access_clinc_medicalfile,access.clinc.medicalfile,model_clinc_medicalfile,clinic_managment.group_medical_admin,1,1,1,1
+
 
